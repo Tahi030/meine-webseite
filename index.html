@@ -8,7 +8,7 @@
   <style>
     /* CSS Variablen */
     :root {
-      --bg-body: #f8f8f8;
+      --bg-body: #c3aa97; /* Hintergrundfarbe */
       --header-bg-overlay: rgba(0,0,0,0.5);
       --nav-bg: #f8b195;
       --primary-color: #c3aa97;
@@ -20,60 +20,32 @@
     
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
     
     body {
-      margin: 0;
-      padding: 0;
       background-color: var(--bg-body);
-      font-family: 'Open Sans', sans-serif;
+      font-family: "Open Sans", sans-serif;
       color: var(--text-color);
       line-height: 1.6;
     }
     
-    /* Parallax Header */
+    /* Header mit zentriertem Bild als Headline */
     header {
-      position: relative;
+      background-color: var(--bg-body);
+      display: flex;
+      justify-content: center;
+      align-items: center;
       height: 60vh;
       min-height: 300px;
-      color: var(--white);
       text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
       padding: 1em;
-      background: url('https://source.unsplash.com/1600x900/?fruit,vegetables') no-repeat center center/cover;
-      background-attachment: fixed;
-    }
-    header::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--header-bg-overlay);
-      z-index: 1;
-    }
-    header * {
-      position: relative;
-      z-index: 2;
     }
     
-    header .logo {
-      max-width: 120px;
-      margin: 0 auto 0.5em;
-    }
-    
-    header .tagline {
-      font-size: 1.2em;
-      margin-bottom: 0.3em;
-    }
-    
-    header h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2em;
-      margin: 0.3em 0;
+    header img {
+      max-width: 90%;
+      height: auto;
     }
     
     /* Navigation */
@@ -84,8 +56,6 @@
     
     nav ul {
       list-style: none;
-      margin: 0;
-      padding: 0;
       display: flex;
       justify-content: center;
       gap: 1.5em;
@@ -103,7 +73,7 @@
       color: var(--text-color);
     }
     
-    /* Sections */
+    /* Abschnitte */
     section {
       background: var(--white);
       margin: 2em auto;
@@ -120,7 +90,7 @@
     }
     
     h2 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: "Montserrat", sans-serif;
       font-size: 2em;
       margin-bottom: 0.5em;
       text-align: center;
@@ -155,7 +125,7 @@
     }
     
     .projekt h3 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: "Montserrat", sans-serif;
       margin-top: 0;
     }
     
@@ -213,10 +183,9 @@
   </style>
 </head>
 <body>
+  <!-- Header mit dem Bild tankzeile.png -->
   <header>
-    <img class="logo" src="Tamara Logo farbe svg.svg" alt="Logo">
-    <div class="tagline">ERNÄHRUNG &amp; LEBENSENERGIE – Gesundheit die schmeckt, für Groß und Klein</div>
-    <h1>Tankzeile</h1>
+    <img src="tankzeile.png" alt="Tankzeile – Ernährung & Lebensenergie" />
   </header>
   
   <nav>
@@ -230,7 +199,7 @@
   <section id="startseite">
     <h2>Willkommen</h2>
     <p>
-      Willkommen auf meiner Herzensseite! Ich heiße Tamara und schaffe hier einen Raum voller Inspiration rund um das Thema ganzheitliche Gesundheit. Schau dich um und lass dich inspirieren.
+      Willkommen auf meiner Herzensseite! Ich heiße Tamara und schaffe hier einen Raum voller Inspiration rund um ganzheitliche Gesundheit. Schau dich um und lass dich inspirieren.
     </p>
   </section>
   
@@ -238,7 +207,7 @@
     <h2>Projekte &amp; Themenwelten</h2>
     
     <div class="projekt">
-      <img src="https://source.unsplash.com/900x400/?apple,fruit" alt="Kapitän Apfel – Ernährung spielerisch entdecken">
+      <img src="https://source.unsplash.com/900x400/?happy,preschool,children" alt="Kapitän Apfel – Ernährung spielerisch entdecken">
       <div class="content">
         <h3>Kapitän Apfel – Ernährung spielerisch entdecken</h3>
         <p class="status">Idee in Entwicklung</p>
@@ -250,7 +219,7 @@
     </div>
     
     <div class="projekt">
-      <img src="https://source.unsplash.com/900x400/?meditation,plants" alt="Tank(T)ruhe – Achtsamkeit für dich und dein Kind">
+      <img src="https://source.unsplash.com/900x400/?mindfulness,mother,child" alt="Tank(T)ruhe – Achtsamkeit für dich und dein Kind">
       <div class="content">
         <h3>Tank(T)ruhe – Achtsamkeit für dich und dein Kind</h3>
         <p class="status">Konzeptidee</p>
@@ -262,7 +231,7 @@
     </div>
     
     <div class="projekt">
-      <img src="https://source.unsplash.com/900x400/?healthy-food" alt="Tankbox – Was koche ich heute?">
+      <img src="https://source.unsplash.com/900x400/?colorful,food" alt="Tankbox – Was koche ich heute?">
       <div class="content">
         <h3>Tankbox – „Was koche ich heute?“</h3>
         <p class="status">Inspiration</p>
@@ -274,7 +243,7 @@
     </div>
     
     <div class="projekt">
-      <img src="https://source.unsplash.com/900x400/?nutrition" alt="Mein Ratgeber – Die perfekte Mischung aus Wissen &amp; Erleben">
+      <img src="https://source.unsplash.com/900x400/?illustration,mask" alt="Mein Ratgeber – Die perfekte Mischung aus Wissen &amp; Erleben">
       <div class="content">
         <h3>Mein Ratgeber – Die perfekte Mischung aus Wissen &amp; Erleben</h3>
         <p>
