@@ -30,7 +30,6 @@
     a {
       color: var(--white);
       text-decoration: none;
-      background: none !important;
     }
     
     a:hover {
@@ -39,7 +38,7 @@
     
     /* Header: Bild als Headline */
     header {
-      background: var(--bg-main);
+      background: linear-gradient(135deg, var(--bg-main) 0%, #d8c6b2 100%);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -47,8 +46,6 @@
       min-height: 300px;
       text-align: center;
       padding: 1em;
-      /* Optional: sanfter Farbverlauf im Header-Hintergrund */
-      background: linear-gradient(135deg, var(--bg-main) 0%, #d8c6b2 100%);
     }
     
     header img {
@@ -70,6 +67,8 @@
       border-radius: 0 0 8px 8px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.2);
       margin: 0 1em;
+      position: relative;
+      z-index: 1000;
     }
     
     nav ul {
@@ -81,7 +80,7 @@
       padding: 0;
     }
     
-    /* Sektionen (Startseite, Projekte, Kontakt, Impressum, Datenschutz) */
+    /* Sektionen: Startseite, Projekte, Kontakt, Impressum, Datenschutzerklärung */
     section {
       background: var(--nav-bg);
       margin: 2em auto;
@@ -92,6 +91,8 @@
       opacity: 0;
       animation: fadeIn 1s ease forwards;
       transition: background 0.3s ease;
+      color: var(--white);
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
     }
     
     @keyframes fadeIn {
@@ -103,6 +104,7 @@
       font-family: 'Roboto Condensed', sans-serif;
       margin-bottom: 0.5em;
       text-align: center;
+      font-weight: 700;
     }
     
     h2 {
@@ -171,12 +173,12 @@
   </style>
 </head>
 <body>
-  <!-- Header-Bereich mit tankzeile.png – bitte die Datei tankzeile.png im gleichen Ordner ablegen -->
+  <!-- Header mit tankzeile.png – bitte die Datei "tankzeile.png" im selben Ordner ablegen -->
   <header>
     <img src="tankzeile.png" alt="Tankzeile – Ernährung &amp; Lebensenergie">
   </header>
   
-  <!-- Navigation, inklusive Links zu Impressum und Datenschutzerklärung -->
+  <!-- Navigation, bei der die Leiste immer sichtbar bleibt -->
   <nav>
     <ul>
       <li><a href="#startseite">Startseite</a></li>
@@ -191,7 +193,7 @@
   <section id="startseite">
     <h2>Willkommen</h2>
     <p>
-      Herzlich willkommen auf meiner Seite! Ich heiße Tamara Hillmann und schaffe hier einen Raum voller Inspiration rund um ganzheitliche Gesundheit. Lass dich von den Themen und Projekten begeistern!
+      Herzlich willkommen auf meiner Seite! Ich heiße Tamara Hillmann und schaffe hier einen Raum voller Inspiration rund um das Thema ganzheitliche Gesundheit. Lass dich von den Themen und Projekten begeistern!
     </p>
   </section>
   
@@ -200,7 +202,6 @@
     <h2>Projekte &amp; Themenwelten</h2>
     
     <div class="projekt">
-      <!-- Fixe Platzhalter von Picsum mit Seed, damit die Bilder stabil bleiben -->
       <img src="https://picsum.photos/seed/children/900/400" alt="Kapitän Apfel – Ernährung spielerisch entdecken">
       <div class="content">
         <h3>Kapitän Apfel – Ernährung spielerisch entdecken</h3>
