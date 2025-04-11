@@ -9,9 +9,8 @@
     /* CSS Variablen */
     :root {
       --bg-body: #c3aa97;           /* Gesamthintergrund */
-      --nav-bg: #f8b195;            /* Navigation und gewünschter Hintergrund für Projekte & Kontakt */
+      --nav-bg: #f8b195;            /* Für Navigation sowie Sektionen */
       --primary-color: #c3aa97;
-      --text-color: #333;
       --white: #fff;
       --projekt-color-odd: #b17272;
       --projekt-color-even: #b2ac88;
@@ -26,7 +25,7 @@
     body {
       background-color: var(--bg-body);
       font-family: "Open Sans", sans-serif;
-      color: var(--text-color);
+      color: var(--white);
       line-height: 1.6;
     }
     
@@ -69,11 +68,13 @@
     }
     
     nav a:hover {
-      color: var(--text-color);
+      color: var(--white);
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
     }
     
-    /* Standard Abschnitte */
+    /* Sektionen (Startseite, Projekte, Kontakt) */
     section {
+      background: var(--nav-bg);
       margin: 2em auto;
       padding: 3em;
       max-width: 900px;
@@ -81,6 +82,8 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       opacity: 0;
       animation: fadeIn 1s ease forwards;
+      color: var(--white);
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
     }
     
     @keyframes fadeIn {
@@ -98,15 +101,8 @@
       margin-bottom: 1em;
     }
     
-    /* Spezifische Hintergrundfarbe für Projekte & Kontakt */
-    #projekte,
-    #kontakt {
-      background: var(--nav-bg);
-    }
-    
     /* Projekte */
     .projekt {
-      background: var(--white);
       border-radius: 8px;
       overflow: hidden;
       margin-bottom: 2em;
@@ -134,33 +130,36 @@
     }
     
     .projekt a {
-      color: var(--nav-bg);
+      color: var(--white);
       font-weight: 600;
       text-decoration: none;
       transition: color 0.3s;
     }
     
     .projekt a:hover {
-      color: var(--text-color);
+      color: var(--white);
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
     }
     
-    /* Rahmenfarben für Projekte */
+    /* Hintergrundfarben der Projekte abwechselnd */
     .projekt:nth-of-type(odd) {
-      border-left: 6px solid var(--projekt-color-odd);
+      background-color: var(--projekt-color-odd);
     }
+    
     .projekt:nth-of-type(even) {
-      border-left: 6px solid var(--projekt-color-even);
+      background-color: var(--projekt-color-even);
     }
     
     /* Kontakt */
     .kontakt-info a {
-      color: var(--nav-bg);
+      color: var(--white);
       text-decoration: none;
       font-weight: bold;
     }
     
     .kontakt-info a:hover {
-      color: var(--text-color);
+      color: var(--white);
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
     }
     
     /* Footer */
