@@ -11,8 +11,8 @@
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f8f8f8; /* Hintergrundfarbe */
-      color: #333;
+      background-color: #f8f8f8; /* Heller Hintergrund für die Seite */
+      color: #333; /* Textfarbe */
     }
 
     /* Header-Bereich */
@@ -83,12 +83,19 @@
 
     /* Projekte */
     .projekt {
-      background: #f1f1f1;
       padding: 1.5em;
       margin-bottom: 1.5em;
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
+    }
+
+    .projekt:nth-child(odd) {
+      background-color: #b2ac88; /* Erste Farbe */
+    }
+
+    .projekt:nth-child(even) {
+      background-color: #b17272; /* Zweite Farbe */
     }
 
     .projekt:hover {
@@ -154,6 +161,22 @@
       nav li {
         margin: 0.5em 0;
       }
+    }
+
+    /* Kontaktbereich */
+    .kontakt-info {
+      font-size: 1.2em;
+      margin-top: 1em;
+    }
+
+    .kontakt-info a {
+      color: #f8b195;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .kontakt-info a:hover {
+      color: #333;
     }
   </style>
 </head>
@@ -245,6 +268,10 @@
       Du hast eine Frage, möchtest einfach etwas loswerden oder mit mir in Kontakt treten?<br>
       Dann schreib mir gerne – ich freue mich über ehrliche Worte, Feedback oder Austausch.
     </p>
+    <div class="kontakt-info">
+      <p><strong>E-Mail:</strong> <a href="mailto:tankzeile@gmx.de">tankzeile@gmx.de</a></p>
+      <p><strong>Instagram:</strong> <a href="https://www.instagram.com/tankzeile" target="_blank">tankzeile</a></p>
+    </div>
     <form action="#" method="post">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required>
@@ -259,6 +286,10 @@
   <footer>
     <p>&copy; 2025 Tankzeile – Privates Herzensprojekt</p>
   </footer>
+  
+</body>
+</html>
+
   
 </body>
 </html>
