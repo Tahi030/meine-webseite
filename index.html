@@ -3,24 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tankzeile – Privates Herzensprojekt</title>
+  <title>Tankzeile – Herzensprojekt</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    /* CSS Variablen */
+    :root {
+      --bg-body: #f8f8f8;
+      --header-bg: #c3aa97;
+      --nav-bg: #f8b195;
+      --text-color: #333;
+      --white: #fff;
+      --projekt-color-odd: #b17272;
+      --projekt-color-even: #b2ac88;
+    }
+
     /* Allgemeine Einstellungen */
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f8f8f8; /* Hintergrundfarbe */
-      color: #333; /* Textfarbe */
+      background-color: var(--bg-body);
+      color: var(--text-color);
+      line-height: 1.6;
     }
 
-    /* Header-Bereich */
+    /* Header */
     header {
-      background-color: #c3aa97; /* Braun für Header */
-      color: white;
+      background-color: var(--header-bg);
+      color: var(--white);
       text-align: center;
-      padding: 5em 0; /* Mehr Abstand oben */
+      padding: 5em 1em;
     }
 
     header img.logo {
@@ -37,7 +49,7 @@
 
     /* Navigation */
     nav {
-      background-color: #f8b195;
+      background-color: var(--nav-bg);
       padding: 1em;
     }
 
@@ -47,6 +59,7 @@
       padding: 0;
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
     }
 
     nav li {
@@ -54,30 +67,31 @@
     }
 
     nav a {
-      color: #fff;
+      color: var(--white);
       text-decoration: none;
+      font-weight: 600;
       transition: color 0.3s ease;
     }
 
     nav a:hover {
-      color: #333; /* Hover-Farbe */
+      color: var(--text-color);
     }
 
-    /* Abschnitt für die Seite */
+    /* Content Section */
     section {
-      background: #fff;
+      background: var(--white);
       margin: 2em auto;
       padding: 3em;
       max-width: 900px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
-      color: #333;
     }
 
-    /* Titel */
+    /* Überschriften */
     h1, h2, h3 {
       font-family: 'Lora', serif;
       font-weight: 600;
+      margin-top: 0;
     }
 
     /* Projekte */
@@ -90,45 +104,37 @@
     }
 
     .projekt:nth-child(odd) {
-      background-color: #b17272; /* Erste Farbe */
+      background-color: var(--projekt-color-odd);
     }
 
     .projekt:nth-child(even) {
-      background-color: #b2ac88; /* Zweite Farbe */
+      background-color: var(--projekt-color-even);
     }
 
     .projekt:hover {
-      transform: scale(1.03); /* Hover-Effekt für die Projekte */
+      transform: scale(1.03);
     }
 
     .projekt h3 {
       margin-top: 1em;
-      color: #333;
+      color: var(--text-color);
     }
 
     .projekt p {
-      line-height: 1.6;
-      margin-top: 0.5em;
+      margin: 0.5em 0;
     }
 
     .projekt a {
-      color: #f8b195;
+      color: var(--nav-bg);
       text-decoration: none;
       font-weight: bold;
       margin-top: 1em;
       display: inline-block;
+      transition: color 0.3s ease;
     }
 
     .projekt a:hover {
-      color: #333;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #c3aa97;
-      color: white;
-      text-align: center;
-      padding: 1em;
+      color: var(--text-color);
     }
 
     /* Tankbox */
@@ -140,36 +146,38 @@
     .tankbox span.tank-letter.O { color: #a4b792; }
     .tankbox span.tank-letter.X { color: #f8b195; }
 
-    /* Mobile-Optimierung */
-    @media (max-width: 768px) {
-      section {
-        padding: 2em;
-      }
+    /* Footer */
+    footer {
+      background-color: var(--header-bg);
+      color: var(--white);
+      text-align: center;
+      padding: 1em;
+    }
 
+    /* Responsives Design */
+    @media screen and (max-width: 768px) {
+      body {
+        font-size: 16px;
+      }
+      header {
+        padding: 3em 1em;
+      }
       nav ul {
         flex-direction: column;
-        padding: 0;
       }
-
       nav li {
         margin: 0.5em 0;
       }
-    }
-
-    /* Kontaktbereich */
-    .kontakt-info {
-      font-size: 1.2em;
-      margin-top: 1em;
-    }
-
-    .kontakt-info a {
-      color: #f8b195;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .kontakt-info a:hover {
-      color: #333;
+      section {
+        padding: 2em;
+        margin: 1em;
+      }
+      .projekt {
+        padding: 1em;
+      }
+      .kontakt-info {
+        font-size: 1em;
+      }
     }
   </style>
 </head>
@@ -196,8 +204,7 @@
     <h2>Startseite</h2>
     <p>
       Willkommen auf meiner kleinen Herzensseite.<br>
-      Ich bin die Tamara, Gründerin der Tankzeile und hier entsteht Stück für Stück ein Ort voller Ideen rund um die Themen <strong>der ganzheitlichen Gesundheit</strong>
-      
+      Ich heiße Tamara und hier entsteht Stück für Stück ein Ort voller Ideen rund um das Thema <strong>ganzheitliche Gesundheit</strong>.<br>
       Ich bin noch im Aufbau – aber wenn du magst, schau dich gerne um.
     </p>
   </section>
@@ -227,7 +234,6 @@
 
     <div class="projekt">
       <h3 class="tankbox">
-        
         <span class="tank-letter T">T</span>
         <span class="tank-letter A">A</span>
         <span class="tank-letter N">N</span>
@@ -239,17 +245,17 @@
       </h3>
       <p class="status">Inspiration</p>
       <p>
-        Die Tankbox erleichtert dir die tägliche Entscheidung „Was koche ich heute?“ Sie bietet eine flexible Lösung, um gesunde und leckere Mahlzeiten schnell zu planen – ohne Stress und ohne den Druck für Familien.
+        Die neue Tankbox erleichtert dir die tägliche Entscheidung „Was koche ich heute?“ Sie bietet dir eine flexible Lösung, um gesunde und leckere Mahlzeiten schnell zu planen – ohne Stress und ohne den Druck für die ganze Familie.
       </p>
       <p><a href="tankbox.html">[Mehr erfahren]</a></p>
     </div>
 
     <div class="projekt">
-      <h3>Mein Ratgeber- Die perfekte Mischung aus Wissen & Erleben</h3>
+      <h3>Mein Ratgeber - Die perfekte Mischung aus Wissen &amp; Erleben</h3>
       <p>
-        Wer bist du hinter deiner Maske – und wie kannst du dein Wohlbefinden als neue Normalität etablieren?
-Ernährung ist mehr als nur Kalorien zählen oder Regeln befolgen. Sie ist ein Spiegel unseres Lebensstils, unserer Gewohnheiten und der Rollen, die wir tagtäglich übernehmen. Doch dieser Ratgeber ist kein typischer Ernährungsratgeber mit starren Regeln oder leeren Versprechungen. Du musst kein Experte sein – du brauchst nur die Bereitschaft, deinen eigenen Weg zu finden.
-Hier geht es um Bewusstsein statt Perfektion, Freude statt Verzicht . Du bekommst keine strengen Pläne oder Lehren – stattdessen begleite ich dich auf Augenhöhe , damit du dich selbst erkennst, was dir wirklich guttut.
+        Wer bist du hinter deiner Maske – und wie kannst du dein Wohlbefinden als neue Normalität etablieren?<br>
+        Ernährung ist mehr als nur Kalorien zählen oder Regeln befolgen. Sie ist ein Spiegel unseres Lebensstils, unserer Gewohnheiten und der Rollen, die wir tagtäglich übernehmen. Doch dieser Ratgeber ist kein typischer Ernährungsratgeber mit starren Regeln oder leeren Versprechungen. Du musst kein Experte sein – du brauchst nur die Bereitschaft, deinen eigenen Weg zu finden.<br>
+        Hier geht es um Bewusstsein statt Perfektion, Freude statt Verzicht. Du bekommst keine strengen Pläne oder Lehren – stattdessen begleite ich dich auf Augenhöhe, damit du dich selbst erkennst, was dir wirklich guttut.
       </p>
     </div>
   </section>
@@ -267,7 +273,7 @@ Hier geht es um Bewusstsein statt Perfektion, Freude statt Verzicht . Du bekomms
   </section>
 
   <footer>
-    <p>&copy; 2025 Tankzeile – Privates Herzensprojekt</p>
+    <p>&copy; 2025 Tankzeile</p>
   </footer>
 </body>
 </html>
