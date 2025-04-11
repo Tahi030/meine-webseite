@@ -8,8 +8,8 @@
   <style>
     /* CSS Variablen */
     :root {
-      --bg-body: #c3aa97; /* Hintergrundfarbe */
-      --nav-bg: #f8b195;
+      --bg-body: #c3aa97;           /* Gesamthintergrund */
+      --nav-bg: #f8b195;            /* Navigation und gewünschter Hintergrund für Projekte & Kontakt */
       --primary-color: #c3aa97;
       --text-color: #333;
       --white: #fff;
@@ -72,9 +72,8 @@
       color: var(--text-color);
     }
     
-    /* Abschnitte */
+    /* Standard Abschnitte */
     section {
-      background: var(--white);
       margin: 2em auto;
       padding: 3em;
       max-width: 900px;
@@ -99,9 +98,15 @@
       margin-bottom: 1em;
     }
     
+    /* Spezifische Hintergrundfarbe für Projekte & Kontakt */
+    #projekte,
+    #kontakt {
+      background: var(--nav-bg);
+    }
+    
     /* Projekte */
     .projekt {
-      background: #fff;
+      background: var(--white);
       border-radius: 8px;
       overflow: hidden;
       margin-bottom: 2em;
@@ -218,7 +223,7 @@
     </div>
     
     <div class="projekt">
-      <img src="https://source.unsplash.com/900x400/?mindfulness,mother,child" alt="Tank(T)ruhe – Achtsamkeit für dich und dein Kind">
+      <img src="https://source.unsplash.com/900x400/?mother,child,mindfulness" alt="Tank(T)ruhe – Achtsamkeit für dich und dein Kind">
       <div class="content">
         <h3>Tank(T)ruhe – Achtsamkeit für dich und dein Kind</h3>
         <p class="status">Konzeptidee</p>
@@ -230,7 +235,7 @@
     </div>
     
     <div class="projekt">
-      <img src="https://source.unsplash.com/900x400/?colorful,food" alt="Tankbox – Was koche ich heute?">
+      <img src="https://source.unsplash.com/900x400/?healthy,food" alt="Tankbox – Was koche ich heute?">
       <div class="content">
         <h3>Tankbox – „Was koche ich heute?“</h3>
         <p class="status">Inspiration</p>
@@ -242,7 +247,7 @@
     </div>
     
     <div class="projekt">
-      <img src="https://source.unsplash.com/900x400/?illustration,mask" alt="Mein Ratgeber – Die perfekte Mischung aus Wissen &amp; Erleben">
+      <img src="https://source.unsplash.com/900x400/?mask,illustration" alt="Mein Ratgeber – Die perfekte Mischung aus Wissen &amp; Erleben">
       <div class="content">
         <h3>Mein Ratgeber – Die perfekte Mischung aus Wissen &amp; Erleben</h3>
         <p>
