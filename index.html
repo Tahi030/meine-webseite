@@ -146,6 +146,22 @@
     .tankbox span.tank-letter.O { color: #a4b792; }
     .tankbox span.tank-letter.X { color: #f8b195; }
 
+    /* Elemente (Inline-Bilder) */
+    #elemente {
+      text-align: center;
+    }
+    .elemente-container {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      margin: 2em 0;
+      flex-wrap: wrap;
+    }
+    .element-img {
+      width: 100px;
+      height: auto;
+    }
+
     /* Footer */
     footer {
       background-color: var(--header-bg);
@@ -272,9 +288,21 @@
     </div>
   </section>
 
+  <!-- Neuer Abschnitt: Elemente mit dekorativen Bildern -->
+  <section id="elemente">
+    <h2>Elemente</h2>
+    <div class="elemente-container">
+      <!-- Orangenscheibe -->
+      <img class="element-img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0NSIgZmlsbD0iI0ZGQTUwMCIgc3Ryb2tlPSIjRTU5NDAwIiBzdHJva2Utd2lkdGg9IjUiLz4KICA8bGluZSB4MT0iNTAiIHkxPSI1IiB4Mj0iNTAiIHkyPSI5NSIgc3Ryb2tlPSIjRTU5NDAwIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8bGluZSB4MT0iNSIgeTE9IjUwIiB4Mj0iOTUiIHkyPSI1MCIgc3Ryb2tlPSIjRTU5NDAwIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+" alt="Orangenscheibe">
+      <!-- Blatt -->
+      <img class="element-img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8cGF0aCBkPSJNNTAgMTAgQzcwIDIwLCA3MCA4MCwgNTAgOTAgQzMwIDgwLCAzMCAyMCwgNTAgMTBaIiBmaWxsPSIjMjI4QjIyIi8+Cjwvc3ZnPg==" alt="Blatt">
+      <!-- Karotte -->
+      <img class="element-img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8cGF0aCBkPSJNNTAgMTAgTDYwIDkwIEw0MCA5MCBaIiBmaWxsPSIjRkZBMDdBIi8+Cjwvc3ZnPg==" alt="Karotte">
+    </div>
+  </section>
+
   <footer>
     <p>&copy; 2025 Tankzeile</p>
   </footer>
 </body>
 </html>
-
