@@ -4,45 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tankzeile</title>
-  <!-- Moderne Schrift: Roboto Condensed -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Einbinden von Roboto und Roboto Condensed -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* CSS Variablen */
+    /* Farb- und Designvariablen */
     :root {
-      --bg-body: #c3aa97;           /* Gesamthintergrund */
-      --nav-bg: #f8b195;            /* Hintergrund für Navigation, Sektionen */
+      --bg-main: #c3aa97; /* Hauptfarbe (Gesamthintergrund) */
+      --nav-bg: #f8b195;  /* Navigation und Sektionen (als Basis) */
+      --projekt-odd: #b17272;
+      --projekt-even: #b2ac88;
       --white: #fff;
-      --projekt-color-odd: #b17272;
-      --projekt-color-even: #b2ac88;
     }
     
-    * {
-      box-sizing: border-box;
+    /* Sanfter Farbverlauf für den Body */
+    body {
       margin: 0;
       padding: 0;
-    }
-    
-    body {
-      background-color: var(--bg-body);
-      font-family: 'Roboto Condensed', sans-serif;
+      font-family: 'Roboto', sans-serif;
       color: var(--white);
       line-height: 1.6;
+      background: linear-gradient(135deg, var(--bg-main) 0%, #d8c6b2 100%);
+      transition: background 0.5s ease-in-out;
     }
     
     a {
-      background: none !important;
-      border: none;
       color: var(--white);
       text-decoration: none;
+      background: none !important;
     }
     
     a:hover {
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     }
     
     /* Header: Bild als Headline */
     header {
-      background-color: var(--bg-body);
+      background: var(--bg-main);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -50,17 +47,29 @@
       min-height: 300px;
       text-align: center;
       padding: 1em;
+      /* Optional: sanfter Farbverlauf im Header-Hintergrund */
+      background: linear-gradient(135deg, var(--bg-main) 0%, #d8c6b2 100%);
     }
     
     header img {
       max-width: 90%;
       height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+    
+    header img:hover {
+      transform: scale(1.02);
     }
     
     /* Navigation */
     nav {
       background-color: var(--nav-bg);
       padding: 0.8em;
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      margin: 0 1em;
     }
     
     nav ul {
@@ -69,19 +78,20 @@
       justify-content: center;
       gap: 1.5em;
       flex-wrap: wrap;
+      padding: 0;
     }
     
-    /* Sektionen: Startseite, Projekte, Kontakt, Impressum, Datenschutzerklärung */
+    /* Sektionen (Startseite, Projekte, Kontakt, Impressum, Datenschutz) */
     section {
       background: var(--nav-bg);
       margin: 2em auto;
-      padding: 3em;
+      padding: 2.5em 2em;
       max-width: 900px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      opacity: 0;
       animation: fadeIn 1s ease forwards;
-      color: var(--white);
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+      transition: background 0.3s ease;
     }
     
     @keyframes fadeIn {
@@ -90,31 +100,31 @@
     }
     
     h2, h3 {
-      font-weight: 700;
-    }
-    
-    h2 {
-      font-size: 2em;
+      font-family: 'Roboto Condensed', sans-serif;
       margin-bottom: 0.5em;
       text-align: center;
     }
     
+    h2 {
+      font-size: 2em;
+    }
+    
     p {
       margin-bottom: 1em;
+      text-align: justify;
     }
     
     /* Projekte */
     .projekt {
-      border-radius: 8px;
+      border-radius: 12px;
       overflow: hidden;
       margin-bottom: 2em;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s, box-shadow 0.3s;
     }
     
     .projekt:hover {
       transform: scale(1.02);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
     }
     
     .projekt img {
@@ -126,32 +136,26 @@
       padding: 1.5em;
     }
     
-    .projekt h3 {
-      margin-top: 0;
-    }
-    
     .projekt a {
       font-weight: 700;
     }
     
-    /* Abwechselnde Hintergründe der Projekte */
     .projekt:nth-of-type(odd) {
-      background-color: var(--projekt-color-odd);
+      background-color: var(--projekt-odd);
     }
-    
     .projekt:nth-of-type(even) {
-      background-color: var(--projekt-color-even);
+      background-color: var(--projekt-even);
     }
     
     /* Footer */
     footer {
-      background-color: var(--bg-body);
-      color: var(--white);
-      text-align: center;
+      background: var(--bg-main);
       padding: 1em;
+      text-align: center;
+      border-top: 2px solid var(--nav-bg);
     }
     
-    /* Responsive */
+    /* Responsive Anpassungen */
     @media (max-width: 768px) {
       header {
         height: 50vh;
@@ -167,12 +171,12 @@
   </style>
 </head>
 <body>
-  <!-- Header mit tankzeile.png (Stelle sicher, dass die Datei im gleichen Ordner liegt) -->
+  <!-- Header-Bereich mit tankzeile.png – bitte die Datei tankzeile.png im gleichen Ordner ablegen -->
   <header>
     <img src="tankzeile.png" alt="Tankzeile – Ernährung &amp; Lebensenergie">
   </header>
   
-  <!-- Navigation mit zusätzlichen Links für Impressum & Datenschutzerklärung -->
+  <!-- Navigation, inklusive Links zu Impressum und Datenschutzerklärung -->
   <nav>
     <ul>
       <li><a href="#startseite">Startseite</a></li>
@@ -187,7 +191,7 @@
   <section id="startseite">
     <h2>Willkommen</h2>
     <p>
-      Willkommen auf meiner Seite! Ich heiße Tamara Hillmann und schaffe hier einen Raum voller Inspiration rund um das Thema ganzheitliche Gesundheit. Schau dich um und lass dich begeistern.
+      Herzlich willkommen auf meiner Seite! Ich heiße Tamara Hillmann und schaffe hier einen Raum voller Inspiration rund um ganzheitliche Gesundheit. Lass dich von den Themen und Projekten begeistern!
     </p>
   </section>
   
@@ -196,19 +200,20 @@
     <h2>Projekte &amp; Themenwelten</h2>
     
     <div class="projekt">
-      <img src="https://source.unsplash.com/900x400/?kids,smiling" alt="Kapitän Apfel – Ernährung spielerisch entdecken">
+      <!-- Fixe Platzhalter von Picsum mit Seed, damit die Bilder stabil bleiben -->
+      <img src="https://picsum.photos/seed/children/900/400" alt="Kapitän Apfel – Ernährung spielerisch entdecken">
       <div class="content">
         <h3>Kapitän Apfel – Ernährung spielerisch entdecken</h3>
         <p class="status">Idee in Entwicklung</p>
         <p>
-          Mit Kapitän Apfel und seiner Crew wird Kindern spielerisch gezeigt, wie wichtig Obst, Gemüse und Wasser sind – und warum Zucker nur eine Ausnahme sein sollte.
+          Mit Kapitän Apfel und seiner Crew wird Kindern spielerisch gezeigt, wie wichtig Obst, Gemüse und Wasser sind – und warum Zucker nur eine Ausnahme ist.
         </p>
         <p><a href="kapitaen-apfel.html">[Mehr erfahren]</a></p>
       </div>
     </div>
     
     <div class="projekt">
-      <img src="https://source.unsplash.com/900x400/?mother,child,meditation" alt="Tank(T)ruhe – Achtsamkeit für dich und dein Kind">
+      <img src="https://picsum.photos/seed/mother/900/400" alt="Tank(T)ruhe – Achtsamkeit für dich und dein Kind">
       <div class="content">
         <h3>Tank(T)ruhe – Achtsamkeit für dich und dein Kind</h3>
         <p class="status">Konzeptidee</p>
@@ -220,7 +225,7 @@
     </div>
     
     <div class="projekt">
-      <img src="https://source.unsplash.com/900x400/?fresh,food,healthy" alt="Tankbox – Was koche ich heute?">
+      <img src="https://picsum.photos/seed/food/900/400" alt="Tankbox – Was koche ich heute?">
       <div class="content">
         <h3>Tankbox – „Was koche ich heute?“</h3>
         <p class="status">Inspiration</p>
@@ -232,7 +237,7 @@
     </div>
     
     <div class="projekt">
-      <img src="https://source.unsplash.com/900x400/?mask,art" alt="Mein Ratgeber – Die perfekte Mischung aus Wissen &amp; Erleben">
+      <img src="https://picsum.photos/seed/mask/900/400" alt="Mein Ratgeber – Die perfekte Mischung aus Wissen &amp; Erleben">
       <div class="content">
         <h3>Mein Ratgeber – Die perfekte Mischung aus Wissen &amp; Erleben</h3>
         <p>
