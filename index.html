@@ -4,13 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tankzeile</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora:wght@400;600&display=swap" rel="stylesheet">
   <style>
     /* CSS Variablen */
     :root {
       --bg-body: #c3aa97;           /* Gesamthintergrund */
-      --nav-bg: #f8b195;            /* Für Navigation sowie Sektionen */
-      --primary-color: #c3aa97;
+      --nav-bg: #f8b195;            /* Hintergrund für Navigation, Projekte und Kontakt */
       --white: #fff;
       --projekt-color-odd: #b17272;
       --projekt-color-even: #b2ac88;
@@ -24,7 +23,7 @@
     
     body {
       background-color: var(--bg-body);
-      font-family: "Open Sans", sans-serif;
+      font-family: 'Poppins', sans-serif;
       color: var(--white);
       line-height: 1.6;
     }
@@ -72,7 +71,7 @@
       text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
     }
     
-    /* Sektionen (Startseite, Projekte, Kontakt) */
+    /* Sektionen */
     section {
       background: var(--nav-bg);
       margin: 2em auto;
@@ -90,8 +89,11 @@
       to { opacity: 1; }
     }
     
+    h2, h3 {
+      font-family: 'Lora', serif;
+    }
+    
     h2 {
-      font-family: "Montserrat", sans-serif;
       font-size: 2em;
       margin-bottom: 0.5em;
       text-align: center;
@@ -125,7 +127,6 @@
     }
     
     .projekt h3 {
-      font-family: "Montserrat", sans-serif;
       margin-top: 0;
     }
     
@@ -164,7 +165,7 @@
     
     /* Footer */
     footer {
-      background-color: var(--primary-color);
+      background-color: var(--bg-body);
       color: var(--white);
       text-align: center;
       padding: 1em;
