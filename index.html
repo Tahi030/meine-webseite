@@ -4,210 +4,224 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tankzeile – Herzensprojekt</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
     /* CSS Variablen */
     :root {
       --bg-body: #f8f8f8;
-      --header-bg: #c3aa97;
+      --header-bg-overlay: rgba(0,0,0,0.5);
       --nav-bg: #f8b195;
+      --primary-color: #c3aa97;
       --text-color: #333;
       --white: #fff;
       --projekt-color-odd: #b17272;
       --projekt-color-even: #b2ac88;
     }
-
-    /* Allgemeine Einstellungen */
+    
+    * {
+      box-sizing: border-box;
+    }
+    
     body {
-      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
       background-color: var(--bg-body);
+      font-family: 'Open Sans', sans-serif;
       color: var(--text-color);
       line-height: 1.6;
     }
-
-    /* Header */
+    
+    /* Parallax Header */
     header {
-      background-color: var(--header-bg);
+      position: relative;
+      height: 80vh;
+      min-height: 400px;
       color: var(--white);
       text-align: center;
-      padding: 5em 1em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1em;
+      background: url('https://source.unsplash.com/1600x900/?nature,health') no-repeat center center/cover;
+      background-attachment: fixed;
     }
-
-    header img.logo {
-      max-width: 150px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--header-bg-overlay);
+      z-index: 1;
     }
-
+    header * {
+      position: relative;
+      z-index: 2;
+    }
+    
+    header .logo {
+      max-width: 120px;
+      margin: 0 auto 0.5em;
+    }
+    
     header .tagline {
       font-size: 1.5em;
-      margin-top: 1em;
+      margin-bottom: 0.5em;
     }
-
+    
+    header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5em;
+      margin: 0.5em 0;
+    }
+    
     /* Navigation */
     nav {
       background-color: var(--nav-bg);
       padding: 1em;
     }
-
+    
     nav ul {
       list-style: none;
       margin: 0;
       padding: 0;
       display: flex;
       justify-content: center;
+      gap: 1.5em;
       flex-wrap: wrap;
     }
-
-    nav li {
-      margin: 0 1.5em;
-    }
-
+    
     nav a {
       color: var(--white);
       text-decoration: none;
       font-weight: 600;
-      transition: color 0.3s ease;
+      transition: color 0.3s;
     }
-
+    
     nav a:hover {
       color: var(--text-color);
     }
-
-    /* Content Section */
+    
+    /* Sections */
     section {
       background: var(--white);
       margin: 2em auto;
       padding: 3em;
       max-width: 900px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
     }
-
-    /* Überschriften */
-    h1, h2, h3 {
-      font-family: 'Lora', serif;
-      font-weight: 600;
-      margin-top: 0;
+    
+    @keyframes fadeIn {
+      to { opacity: 1; }
     }
-
+    
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2em;
+      margin-bottom: 0.5em;
+      text-align: center;
+    }
+    
+    p {
+      margin-bottom: 1em;
+    }
+    
     /* Projekte */
     .projekt {
-      padding: 1.5em;
-      margin-bottom: 1.5em;
+      background: #fff;
       border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
+      overflow: hidden;
+      margin-bottom: 2em;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
-
-    .projekt:nth-child(odd) {
-      background-color: var(--projekt-color-odd);
-    }
-
-    .projekt:nth-child(even) {
-      background-color: var(--projekt-color-even);
-    }
-
+    
     .projekt:hover {
-      transform: scale(1.03);
+      transform: scale(1.02);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
     }
-
+    
+    .projekt img {
+      width: 100%;
+      display: block;
+    }
+    
+    .projekt .content {
+      padding: 1.5em;
+    }
+    
     .projekt h3 {
-      margin-top: 1em;
-      color: var(--text-color);
+      font-family: 'Montserrat', sans-serif;
+      margin-top: 0;
     }
-
-    .projekt p {
-      margin: 0.5em 0;
-    }
-
+    
     .projekt a {
       color: var(--nav-bg);
+      font-weight: 600;
       text-decoration: none;
-      font-weight: bold;
-      margin-top: 1em;
-      display: inline-block;
-      transition: color 0.3s ease;
+      transition: color 0.3s;
     }
-
+    
     .projekt a:hover {
       color: var(--text-color);
     }
-
-    /* Tankbox */
-    .tankbox span.tank-letter.T { color: #90beab; }
-    .tankbox span.tank-letter.A { color: #3aa970; }
-    .tankbox span.tank-letter.N { color: #d77e5e; }
-    .tankbox span.tank-letter.K { color: #ffd492; }
-    .tankbox span.tank-letter.B { color: #b17272; }
-    .tankbox span.tank-letter.O { color: #a4b792; }
-    .tankbox span.tank-letter.X { color: #f8b195; }
-
-    /* Elemente (Inline-Bilder) */
-    #elemente {
-      text-align: center;
+    
+    /* Rahmenfarben für Projekte */
+    .projekt:nth-of-type(odd) {
+      border-left: 6px solid var(--projekt-color-odd);
     }
-    .elemente-container {
-      display: flex;
-      justify-content: center;
-      gap: 2em;
-      margin: 2em 0;
-      flex-wrap: wrap;
+    .projekt:nth-of-type(even) {
+      border-left: 6px solid var(--projekt-color-even);
     }
-    .element-img {
-      width: 100px;
-      height: auto;
+    
+    /* Kontakt */
+    .kontakt-info a {
+      color: var(--nav-bg);
+      text-decoration: none;
+      font-weight: bold;
     }
-
+    
+    .kontakt-info a:hover {
+      color: var(--text-color);
+    }
+    
     /* Footer */
     footer {
-      background-color: var(--header-bg);
+      background-color: var(--primary-color);
       color: var(--white);
       text-align: center;
       padding: 1em;
     }
-
-    /* Responsives Design */
-    @media screen and (max-width: 768px) {
-      body {
-        font-size: 16px;
-      }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
       header {
-        padding: 3em 1em;
-      }
-      nav ul {
-        flex-direction: column;
-      }
-      nav li {
-        margin: 0.5em 0;
+        height: 60vh;
       }
       section {
         padding: 2em;
         margin: 1em;
       }
-      .projekt {
-        padding: 1em;
-      }
-      .kontakt-info {
-        font-size: 1em;
+      nav ul {
+        flex-direction: column;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="Tamara Logo farbe svg.svg" alt="Logo" class="logo">
-    <div class="tagline">Ernährung &amp; Lebensenergie - Gesundheit die schmeckt, für Groß und Klein</div>
+    <img class="logo" src="Tamara Logo farbe svg.svg" alt="Logo">
+    <div class="tagline">Ernährung &amp; Lebensenergie - Gesundheit die schmeckt</div>
     <h1>Meine Mission</h1>
     <p>
-      Hinter den Masken des Alltags bleibt oft wenig Raum für echte Verbindung – zu uns selbst und zueinander.
-      Die Tankzeile ist mein Herzensprojekt: ein Ort zum Auftanken – mit Ideen, Gedanken und Impulsen für mehr Leichtigkeit, Nähe und Wohlbefinden im Alltag.
+      Hinter den Masken des Alltags findet sich ein Raum für echte Verbindung. Die Tankzeile ist ein Ort zum Auftanken – mit Impulsen für mehr Leichtigkeit, Nähe und Wohlbefinden.
     </p>
   </header>
-
+  
   <nav>
     <ul>
       <li><a href="#startseite">Startseite</a></li>
@@ -215,92 +229,75 @@
       <li><a href="#kontakt">Kontakt</a></li>
     </ul>
   </nav>
-
+  
   <section id="startseite">
-    <h2>Startseite</h2>
+    <h2>Willkommen</h2>
     <p>
-      Willkommen auf meiner kleinen Herzensseite.<br>
-      Ich heiße Tamara und hier entsteht Stück für Stück ein Ort voller Ideen rund um das Thema <strong>ganzheitliche Gesundheit</strong>.<br>
-      Ich bin noch im Aufbau – aber wenn du magst, schau dich gerne um.
+      Willkommen auf meiner Herzensseite! Ich heiße Tamara und schaffe hier einen Raum voller Inspiration rund um ganzheitliche Gesundheit. Schau dich um und lass dich inspirieren.
     </p>
   </section>
-
+  
   <section id="projekte">
-    <h2>Themenwelten &amp; Projekte</h2>
-
+    <h2>Projekte &amp; Themenwelten</h2>
+    
     <div class="projekt">
-      <h3>Kapitän Apfel – Ernährung spielerisch entdecken</h3>
-      <p class="status">Idee in Entwicklung</p>
-      <p>
-        Spielend lernen mit Kapitän Apfel und seiner Crew – Kindern wird gezeigt, wie wichtig Obst, Gemüse und Wasser sind.
-        Sie erfahren, warum Zucker nur eine Ausnahme sein sollte und ob sie Herrn Zuckerhut entkommen, um ihre volle Schubkraft zu erreichen.
-      </p>
-      <p><a href="kapitaen-apfel.html">[Mehr erfahren]</a></p>
+      <img src="https://source.unsplash.com/900x400/?apple,fruit" alt="Kapitän Apfel">
+      <div class="content">
+        <h3>Kapitän Apfel – Ernährung spielerisch entdecken</h3>
+        <p class="status">Idee in Entwicklung</p>
+        <p>
+          Mit Kapitän Apfel und seiner Crew wird Kindern spielerisch gezeigt, wie wichtig Obst, Gemüse und Wasser sind – und warum Zucker nur eine Ausnahme sein sollte.
+        </p>
+        <p><a href="kapitaen-apfel.html">[Mehr erfahren]</a></p>
+      </div>
     </div>
-
+    
     <div class="projekt">
-      <h3>Tank(T)ruhe – Achtsamkeit für dich und dein Kind</h3>
-      <p class="status">Konzeptidee</p>
-      <p>
-        Die Tank(T)ruhe schenkt dir und deinem Kind eine besondere Zeit voller Achtsamkeit, Wärme und Geborgenheit.
-        Entdecke einfache Rituale und Momente der Verbindung, um gemeinsam zur Ruhe zu kommen.
-      </p>
-      <p><a href="schatztruhe.html">[Mehr erfahren]</a></p>
+      <img src="https://source.unsplash.com/900x400/?meditation,child" alt="Tank(T)ruhe – Achtsamkeit">
+      <div class="content">
+        <h3>Tank(T)ruhe – Achtsamkeit für dich und dein Kind</h3>
+        <p class="status">Konzeptidee</p>
+        <p>
+          Entdecke Momente der Achtsamkeit und Geborgenheit. Gemeinsame Rituale schaffen Raum für Verbindung und Ruhe im Alltag.
+        </p>
+        <p><a href="schatztruhe.html">[Mehr erfahren]</a></p>
+      </div>
     </div>
-
+    
     <div class="projekt">
-      <h3 class="tankbox">
-        <span class="tank-letter T">T</span>
-        <span class="tank-letter A">A</span>
-        <span class="tank-letter N">N</span>
-        <span class="tank-letter K">K</span>
-        <span class="tank-letter B">B</span>
-        <span class="tank-letter O">O</span>
-        <span class="tank-letter X">X</span>
-        – „Was koche ich heute?“
-      </h3>
-      <p class="status">Inspiration</p>
-      <p>
-        Die neue Tankbox erleichtert dir die tägliche Entscheidung „Was koche ich heute?“ Sie bietet dir eine flexible Lösung, um gesunde und leckere Mahlzeiten schnell zu planen – ohne Stress und ohne den Druck für die ganze Familie.
-      </p>
-      <p><a href="tankbox.html">[Mehr erfahren]</a></p>
+      <img src="https://source.unsplash.com/900x400/?cooking,healthy" alt="Tankbox – Was koche ich heute?">
+      <div class="content">
+        <h3>Tankbox – „Was koche ich heute?“</h3>
+        <p class="status">Inspiration</p>
+        <p>
+          Die Tankbox hilft dir, gesund und stressfrei Mahlzeiten zu planen. Finde täglich neue Ideen für leckere Rezepte.
+        </p>
+        <p><a href="tankbox.html">[Mehr erfahren]</a></p>
+      </div>
     </div>
-
+    
     <div class="projekt">
-      <h3>Mein Ratgeber - Die perfekte Mischung aus Wissen &amp; Erleben</h3>
-      <p>
-        Wer bist du hinter deiner Maske – und wie kannst du dein Wohlbefinden als neue Normalität etablieren?<br>
-        Ernährung ist mehr als nur Kalorien zählen oder Regeln befolgen. Sie ist ein Spiegel unseres Lebensstils, unserer Gewohnheiten und der Rollen, die wir tagtäglich übernehmen. Doch dieser Ratgeber ist kein typischer Ernährungsratgeber mit starren Regeln oder leeren Versprechungen. Du musst kein Experte sein – du brauchst nur die Bereitschaft, deinen eigenen Weg zu finden.<br>
-        Hier geht es um Bewusstsein statt Perfektion, Freude statt Verzicht. Du bekommst keine strengen Pläne oder Lehren – stattdessen begleite ich dich auf Augenhöhe, damit du dich selbst erkennst, was dir wirklich guttut.
-      </p>
+      <img src="https://source.unsplash.com/900x400/?health,guide" alt="Mein Ratgeber">
+      <div class="content">
+        <h3>Mein Ratgeber – Die perfekte Mischung aus Wissen &amp; Erleben</h3>
+        <p>
+          Ernährung ist mehr als Kalorien zählen. Entdecke, wie du dein Wohlbefinden steigern und eine neue, bewusste Lebensweise etablieren kannst.
+        </p>
+      </div>
     </div>
   </section>
-
+  
   <section id="kontakt">
     <h2>Kontakt</h2>
     <p>
-      Du hast eine Frage, möchtest einfach etwas loswerden oder mit mir in Kontakt treten?<br>
-      Dann schreib mir gerne – ich freue mich über ehrliche Worte, Feedback oder Austausch.
+      Hast du Fragen oder möchtest in Austausch treten? Schreib mir – ich freue mich auf deine Nachricht!
     </p>
     <div class="kontakt-info">
       <p><strong>E-Mail:</strong> <a href="mailto:tankzeile@gmx.de">tankzeile@gmx.de</a></p>
       <p><strong>Instagram:</strong> <a href="https://www.instagram.com/tankzeile" target="_blank">tankzeile</a></p>
     </div>
   </section>
-
-  <!-- Neuer Abschnitt: Elemente mit dekorativen Bildern -->
-  <section id="elemente">
-    <h2>Elemente</h2>
-    <div class="elemente-container">
-      <!-- Orangenscheibe -->
-      <img class="element-img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0NSIgZmlsbD0iI0ZGQTUwMCIgc3Ryb2tlPSIjRTU5NDAwIiBzdHJva2Utd2lkdGg9IjUiLz4KICA8bGluZSB4MT0iNTAiIHkxPSI1IiB4Mj0iNTAiIHkyPSI5NSIgc3Ryb2tlPSIjRTU5NDAwIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8bGluZSB4MT0iNSIgeTE9IjUwIiB4Mj0iOTUiIHkyPSI1MCIgc3Ryb2tlPSIjRTU5NDAwIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+" alt="Orangenscheibe">
-      <!-- Blatt -->
-      <img class="element-img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8cGF0aCBkPSJNNTAgMTAgQzcwIDIwLCA3MCA4MCwgNTAgOTAgQzMwIDgwLCAzMCAyMCwgNTAgMTBaIiBmaWxsPSIjMjI4QjIyIi8+Cjwvc3ZnPg==" alt="Blatt">
-      <!-- Karotte -->
-      <img class="element-img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8cGF0aCBkPSJNNTAgMTAgTDYwIDkwIEw0MCA5MCBaIiBmaWxsPSIjRkZBMDdBIi8+Cjwvc3ZnPg==" alt="Karotte">
-    </div>
-  </section>
-
+  
   <footer>
     <p>&copy; 2025 Tankzeile</p>
   </footer>
