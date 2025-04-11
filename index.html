@@ -9,7 +9,7 @@
     /* CSS Variablen */
     :root {
       --bg-body: #c3aa97;           /* Gesamthintergrund */
-      --nav-bg: #f8b195;            /* Hintergrund für Navigation, Projekte & Kontakt */
+      --nav-bg: #f8b195;            /* Hintergrund für Navigation, Projekte, Kontakt, Impressum & Datenschutz */
       --white: #fff;
       --projekt-color-odd: #b17272;
       --projekt-color-even: #b2ac88;
@@ -71,7 +71,7 @@
       text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
     }
     
-    /* Sektionen: Startseite, Projekte & Kontakt */
+    /* Sektionen: Startseite, Projekte, Kontakt, Impressum & Datenschutz */
     section {
       background: var(--nav-bg);
       margin: 2em auto;
@@ -146,21 +146,8 @@
     .projekt:nth-of-type(odd) {
       background-color: var(--projekt-color-odd);
     }
-    
     .projekt:nth-of-type(even) {
       background-color: var(--projekt-color-even);
-    }
-    
-    /* Kontakt */
-    .kontakt-info a {
-      color: var(--white);
-      text-decoration: none;
-      font-weight: bold;
-    }
-    
-    .kontakt-info a:hover {
-      color: var(--white);
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
     }
     
     /* Footer */
@@ -170,24 +157,10 @@
       text-align: center;
       padding: 1em;
     }
-    
-    /* Responsive */
-    @media (max-width: 768px) {
-      header {
-        height: 50vh;
-      }
-      section {
-        padding: 2em;
-        margin: 1em;
-      }
-      nav ul {
-        flex-direction: column;
-      }
-    }
   </style>
 </head>
 <body>
-  <!-- Header-Bereich mit tankzeile.png -->
+  <!-- Header mit tankzeile.png -->
   <header>
     <img src="tankzeile.png" alt="Tankzeile – Ernährung & Lebensenergie">
   </header>
@@ -197,13 +170,15 @@
       <li><a href="#startseite">Startseite</a></li>
       <li><a href="#projekte">Projekte</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
+      <li><a href="#impressum">Impressum</a></li>
+      <li><a href="#datenschutz">Datenschutzerklärung</a></li>
     </ul>
   </nav>
   
   <section id="startseite">
     <h2>Willkommen</h2>
     <p>
-      Willkommen auf meiner Herzensseite! Ich heiße Tamara und schaffe hier einen Raum voller Inspiration rund um das Thema ganzheitliche Gesundheit. Schau dich um und lass dich inspirieren.
+      Willkommen auf meiner Seite! Ich heiße Tamara und schaffe hier einen Raum voller Inspiration rund um das Thema ganzheitliche Gesundheit. Schau dich um und lass dich begeistern.
     </p>
   </section>
   
@@ -211,7 +186,7 @@
     <h2>Projekte &amp; Themenwelten</h2>
     
     <div class="projekt">
-      <img src="https://loremflickr.com/900/400/happy,preschool,children" alt="Kapitän Apfel – Ernährung spielerisch entdecken">
+      <img src="https://source.unsplash.com/900x400/?happy,children,preschool" alt="Kapitän Apfel – Ernährung spielerisch entdecken">
       <div class="content">
         <h3>Kapitän Apfel – Ernährung spielerisch entdecken</h3>
         <p class="status">Idee in Entwicklung</p>
@@ -223,35 +198,35 @@
     </div>
     
     <div class="projekt">
-      <img src="https://loremflickr.com/900/400/mother,child,mindfulness" alt="Tank(T)ruhe – Achtsamkeit für dich und dein Kind">
+      <img src="https://source.unsplash.com/900x400/?mother,child,yoga" alt="Tank(T)ruhe – Achtsamkeit für dich und dein Kind">
       <div class="content">
         <h3>Tank(T)ruhe – Achtsamkeit für dich und dein Kind</h3>
         <p class="status">Konzeptidee</p>
         <p>
-          Entdecke Momente der Achtsamkeit und Geborgenheit. Gemeinsame Rituale schaffen Raum für Verbindung und Ruhe im Alltag.
+          Erlebe Momente der Achtsamkeit und Geborgenheit. Gemeinsame Rituale schaffen Raum für Verbindung und Ruhe im Alltag.
         </p>
         <p><a href="schatztruhe.html">[Mehr erfahren]</a></p>
       </div>
     </div>
     
     <div class="projekt">
-      <img src="https://loremflickr.com/900/400/healthy,food" alt="Tankbox – Was koche ich heute?">
+      <img src="https://source.unsplash.com/900x400/?fresh,food,cuisine" alt="Tankbox – Was koche ich heute?">
       <div class="content">
         <h3>Tankbox – „Was koche ich heute?“</h3>
         <p class="status">Inspiration</p>
         <p>
-          Die Tankbox hilft dir, gesund und stressfrei Mahlzeiten zu planen. Finde täglich neue Ideen für leckere Rezepte.
+          Die Tankbox unterstützt dich, gesund und stressfrei Mahlzeiten zu planen. Entdecke täglich neue Ideen für leckere Rezepte.
         </p>
         <p><a href="tankbox.html">[Mehr erfahren]</a></p>
       </div>
     </div>
     
     <div class="projekt">
-      <img src="https://loremflickr.com/900/400/mask,illustration" alt="Mein Ratgeber – Die perfekte Mischung aus Wissen &amp; Erleben">
+      <img src="https://source.unsplash.com/900x400/?mask,art,illustration" alt="Mein Ratgeber – Die perfekte Mischung aus Wissen &amp; Erleben">
       <div class="content">
         <h3>Mein Ratgeber – Die perfekte Mischung aus Wissen &amp; Erleben</h3>
         <p>
-          Ernährung ist mehr als Kalorien zählen. Entdecke, wie du dein Wohlbefinden steigern und eine neue, bewusste Lebensweise etablieren kannst.
+          Ernährung ist mehr als Kalorien zählen. Erfahre, wie du dein Wohlbefinden steigern und eine neue, bewusste Lebensweise etablieren kannst.
         </p>
       </div>
     </div>
@@ -260,12 +235,59 @@
   <section id="kontakt">
     <h2>Kontakt</h2>
     <p>
-      Hast du Fragen oder möchtest in Austausch treten? Schreib mir – ich freue mich auf deine Nachricht!
+      Hast du Fragen oder möchtest dich austauschen? Schreib mir – ich freue mich auf deine Nachricht!
     </p>
     <div class="kontakt-info">
       <p><strong>E-Mail:</strong> <a href="mailto:tankzeile@gmx.de">tankzeile@gmx.de</a></p>
       <p><strong>Instagram:</strong> <a href="https://www.instagram.com/tankzeile" target="_blank">tankzeile</a></p>
     </div>
+  </section>
+  
+  <!-- Impressum -->
+  <section id="impressum">
+    <h2>Impressum</h2>
+    <p>
+      Angaben gemäß § 5 TMG
+    </p>
+    <p>
+      Tamara Hillmann<br>
+      [Adresse bitte hier ergänzen]<br>
+      [PLZ und Ort bitte hier ergänzen]
+    </p>
+    <p>
+      <strong>Kontakt:</strong><br>
+      E-Mail: <a href="mailto:tankzeile@gmx.de">tankzeile@gmx.de</a>
+    </p>
+    <p>
+      Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:<br>
+      Tamara Hillmann
+    </p>
+    <p>
+      (Hinweis: Dieser Mustertext basiert auf Vorlagen von eRecht24 – bitte prüfe die Angaben vor der Veröffentlichung.)
+    </p>
+  </section>
+  
+  <!-- Datenschutzerklärung -->
+  <section id="datenschutz">
+    <h2>Datenschutzerklärung</h2>
+    <p>
+      Der Schutz Ihrer personenbezogenen Daten hat für uns einen hohen Stellenwert. Nachfolgend finden Sie Informationen darüber, welche Daten erhoben werden, zu welchen Zwecken diese verarbeitet werden und welche Rechte Ihnen zustehen.
+    </p>
+    <p>
+      <strong>Datenverarbeitung:</strong><br>
+      Beim Besuch unserer Website werden automatisch Informationen über den von Ihnen verwendeten Browser, Ihr Betriebssystem und Ihre IP-Adresse erhoben. Diese Daten dienen ausschließlich statistischen Zwecken und zur Verbesserung unseres Angebots.
+    </p>
+    <p>
+      <strong>Externe Dienste:</strong><br>
+      Sollten externe Dienste oder Plugins eingebunden sein, informieren wir gesondert über Art und Umfang der Datenübertragung.
+    </p>
+    <p>
+      <strong>Ihre Rechte:</strong><br>
+      Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Sperrung Ihrer personenbezogenen Daten. Bei Fragen wenden Sie sich bitte an die im Impressum genannten Kontaktmöglichkeiten.
+    </p>
+    <p>
+      (Hinweis: Diese Datenschutzerklärung basiert auf Mustervorlagen, z. B. von eRecht24 – bitte konsultieren Sie einen Fachanwalt, um die Texte rechtskonform anzupassen.)
+    </p>
   </section>
   
   <footer>
