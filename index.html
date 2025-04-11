@@ -4,35 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tankzeile – Privates Herzensprojekt</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Rubik', sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #c3aa97;
-      color: #fefaf8;
+      background-color: #f8f8f8;
+      color: #333;
     }
-    header, footer {
-      background-color: #c3aa97;
-      color: #fff;
+
+    header {
+      background-image: url('https://via.placeholder.com/1600x600/cccccc/ffffff?text=Willkommen+bei+Tankzeile');
+      background-size: cover;
+      color: white;
       text-align: center;
-      padding: 1em;
+      padding: 4em 0;
     }
+
     header img.logo {
       max-width: 150px;
       height: auto;
       display: block;
       margin: 0 auto;
     }
+
     header .tagline {
       font-size: 1.2em;
       margin-top: 0.5em;
     }
+
     nav {
       background-color: #f8b195;
-      padding: 0.5em;
+      padding: 1em;
     }
+
     nav ul {
       list-style: none;
       margin: 0;
@@ -40,49 +46,84 @@
       display: flex;
       justify-content: center;
     }
+
     nav li {
       margin: 0 1em;
     }
+
     nav a {
       color: #fff;
       text-decoration: none;
-    }
-    section {
-      background: #fff;
-      margin: 1em auto;
-      padding: 2em;
-      max-width: 800px;
-      box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-      color: #333;
-    }
-    .projekt {
-      border: 1px solid #ccc;
-      padding: 1em;
-      margin-bottom: 1em;
+      transition: color 0.3s ease;
     }
 
-    .projekt:nth-of-type(1) {
-      background-color: #b2ac88;
+    nav a:hover {
+      color: #333;
     }
-    .projekt:nth-of-type(2) {
-      background-color: #b17272;
+
+    section {
+      background: #fff;
+      margin: 2em auto;
+      padding: 3em;
+      max-width: 900px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      color: #333;
     }
-    .projekt:nth-of-type(4) {
-      background-color: #b2ac88;
-    }
-    .status {
+
+    h1, h2, h3 {
+      font-family: 'Lora', serif;
       font-weight: bold;
-      margin-bottom: 0.5em;
     }
-    form input, form textarea {
-      width: 100%;
-      padding: 0.5em;
-      margin: 0.5em 0;
-      box-sizing: border-box;
+
+    .projekt {
+      background: #f1f1f1;
+      padding: 1.5em;
+      margin-bottom: 1.5em;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
     }
-    form button {
-      padding: 0.5em 1em;
+
+    .projekt:hover {
+      transform: scale(1.03); /* Leichte Vergrößerung */
     }
+
+    .projekt img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .projekt h3 {
+      margin-top: 1em;
+      color: #333;
+    }
+
+    .projekt p {
+      line-height: 1.6;
+      margin-top: 0.5em;
+    }
+
+    .projekt a {
+      color: #f8b195;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 1em;
+      display: inline-block;
+    }
+
+    .projekt a:hover {
+      color: #333;
+    }
+
+    footer {
+      background-color: #c3aa97;
+      color: white;
+      text-align: center;
+      padding: 1em;
+    }
+
     .tankbox span.tank-letter.T { color: #90beab; }
     .tankbox span.tank-letter.A { color: #3aa970; }
     .tankbox span.tank-letter.N { color: #d77e5e; }
@@ -90,6 +131,22 @@
     .tankbox span.tank-letter.B { color: #b17272; }
     .tankbox span.tank-letter.O { color: #a4b792; }
     .tankbox span.tank-letter.X { color: #f8b195; }
+
+    /* Mobile-Optimierung */
+    @media (max-width: 768px) {
+      section {
+        padding: 2em;
+      }
+
+      nav ul {
+        flex-direction: column;
+        padding: 0;
+      }
+
+      nav li {
+        margin: 0.5em 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -124,8 +181,8 @@
   <section id="projekte">
     <h2>Themenwelten &amp; Projekte</h2>
 
-    <!-- Kapitän Apfel -->
     <div class="projekt">
+      <img src="https://via.placeholder.com/800x400/cccccc/ffffff?text=Kapitän+Apfel" alt="Kapitän Apfel">
       <h3>Kapitän Apfel – Ernährung spielerisch entdecken</h3>
       <p class="status">Idee in Entwicklung</p>
       <p>
@@ -135,8 +192,8 @@
       <p><a href="kapitaen-apfel.html">[Mehr erfahren]</a></p>
     </div>
 
-    <!-- Tank(T)ruhe -->
     <div class="projekt">
+      <img src="https://via.placeholder.com/800x400/cccccc/ffffff?text=Tank(T)ruhe" alt="Tank(T)ruhe">
       <h3>Tank(T)ruhe – Achtsamkeit für dich und dein Kind</h3>
       <p class="status">Konzeptidee</p>
       <p>
@@ -146,7 +203,6 @@
       <p><a href="schatztruhe.html">[Mehr erfahren]</a></p>
     </div>
 
-    <!-- Tankbox -->
     <div class="projekt">
       <h3 class="tankbox">
         🍽️ 
@@ -166,7 +222,6 @@
       <p><a href="tankbox.html">[Mehr erfahren]</a></p>
     </div>
 
-    <!-- Der Ratgeber -->
     <div class="projekt">
       <h3>Der Ratgeber mit den Masken</h3>
       <p>
@@ -185,17 +240,4 @@
     <form action="#" method="post">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required>
-      <label for="email">E-Mail:</label>
-      <input type="email" id="email" name="email" required>
-      <label for="message">Nachricht:</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
-      <button type="submit">Absenden</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Tankzeile – Privates Herzensprojekt</p>
-  </footer>
-  
-</body>
-</html>
+     
