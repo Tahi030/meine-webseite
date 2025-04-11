@@ -6,20 +6,22 @@
   <title>Tankzeile – Privates Herzensprojekt</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    /* Allgemeine Einstellungen */
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f8f8f8;
+      background-color: #f8f8f8; /* Hintergrundfarbe */
       color: #333;
     }
 
+    /* Header-Bereich */
     header {
       background-image: url('https://via.placeholder.com/1600x600/cccccc/ffffff?text=Willkommen+bei+Tankzeile');
       background-size: cover;
       color: white;
       text-align: center;
-      padding: 4em 0;
+      padding: 5em 0; /* Mehr Abstand oben */
     }
 
     header img.logo {
@@ -30,10 +32,11 @@
     }
 
     header .tagline {
-      font-size: 1.2em;
-      margin-top: 0.5em;
+      font-size: 1.5em; /* Größere Tagline */
+      margin-top: 1em;
     }
 
+    /* Navigation */
     nav {
       background-color: #f8b195;
       padding: 1em;
@@ -48,7 +51,7 @@
     }
 
     nav li {
-      margin: 0 1em;
+      margin: 0 1.5em;
     }
 
     nav a {
@@ -58,9 +61,10 @@
     }
 
     nav a:hover {
-      color: #333;
+      color: #333; /* Hover-Farbe */
     }
 
+    /* Abschnitt für die Seite */
     section {
       background: #fff;
       margin: 2em auto;
@@ -71,11 +75,13 @@
       color: #333;
     }
 
+    /* Titel */
     h1, h2, h3 {
       font-family: 'Lora', serif;
-      font-weight: bold;
+      font-weight: 600;
     }
 
+    /* Projekte */
     .projekt {
       background: #f1f1f1;
       padding: 1.5em;
@@ -86,7 +92,7 @@
     }
 
     .projekt:hover {
-      transform: scale(1.03); /* Leichte Vergrößerung */
+      transform: scale(1.03); /* Hover-Effekt für die Projekte */
     }
 
     .projekt img {
@@ -117,6 +123,7 @@
       color: #333;
     }
 
+    /* Footer */
     footer {
       background-color: #c3aa97;
       color: white;
@@ -124,6 +131,7 @@
       padding: 1em;
     }
 
+    /* Tankbox */
     .tankbox span.tank-letter.T { color: #90beab; }
     .tankbox span.tank-letter.A { color: #3aa970; }
     .tankbox span.tank-letter.N { color: #d77e5e; }
@@ -240,4 +248,17 @@
     <form action="#" method="post">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required>
-     
+      <label for="email">E-Mail:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="message">Nachricht:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+      <button type="submit">Absenden</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Tankzeile – Privates Herzensprojekt</p>
+  </footer>
+  
+</body>
+</html>
